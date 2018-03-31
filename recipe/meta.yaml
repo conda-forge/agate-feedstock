@@ -1,9 +1,8 @@
-{%set name = "agate" %}
-{%set version = "1.6.1" %}
-{%set compress_type = "tar.gz" %}
-{%set hash_type = "sha256" %}
-{%set hash_val = "c93aaa500b439d71e4a5cf088d0006d2ce2c76f1950960c8843114e5f361dfd3" %}
-{%set build_num = "2" %}
+{% set name = "agate" %}
+{% set version = "1.6.1" %}
+{% set compress_type = "tar.gz" %}
+{% set hash_type = "sha256" %}
+{% set hash_val = "c93aaa500b439d71e4a5cf088d0006d2ce2c76f1950960c8843114e5f361dfd3" %}
 
 package:
   name: {{ name|lower }}
@@ -15,6 +14,7 @@ source:
   {{ hash_type }}: {{ hash_val }}
 
 build:
+  noarch: python
   number: 0
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
@@ -49,7 +49,7 @@ about:
   license: COPYING
   summary: 'A data analysis library that is optimized for humans instead of machines.'
   doc_url: http://agate.rtfd.org/
-  dev_url: http://agate.rtfd.org/
+  dev_url: https://github.com/wireservice/agate
 
 extra:
   recipe-maintainers:
