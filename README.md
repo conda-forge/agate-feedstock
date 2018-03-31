@@ -14,9 +14,7 @@ Summary: A data analysis library that is optimized for humans instead of machine
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/agate-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/agate-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/agate-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/agate-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/agate-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/agate-feedstock/branch/master)
+All platforms: [![Circle CI](https://circleci.com/gh/conda-forge/agate-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/agate-feedstock)
 
 Current release info
 ====================
