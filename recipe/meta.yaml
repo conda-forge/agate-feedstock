@@ -1,5 +1,5 @@
 {% set name = "agate" %}
-{% set version = "1.6.1" %}
+{% set version = "1.6.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c93aaa500b439d71e4a5cf088d0006d2ce2c76f1950960c8843114e5f361dfd3
+  sha256: 8dbd4a57a2cffecfa2d8109ef5993ec4be12a8a7c81fbc0c8c79d96d4c4399ed
 
 build:
   number: 0
@@ -39,7 +39,7 @@ test:
     - agate.tableset
   commands:
     - pip check
-  requires: 
+  requires:
     - pip
 
 about:
@@ -47,7 +47,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: COPYING
-  summary: 'A data analysis library that is optimized for humans instead of machines.'
+  summary: A data analysis library that is optimized for humans instead of machines.
   doc_url: http://agate.rtfd.org/
   dev_url: http://agate.rtfd.org/
 
