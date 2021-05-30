@@ -45,7 +45,7 @@ about:
   home: http://agate.readthedocs.org/
   license: MIT
   license_family: MIT
-  license: COPYING
+  license_file: COPYING
   summary: 'A data analysis library that is optimized for humans instead of machines.'
   doc_url: http://agate.rtfd.org/
   dev_url: http://agate.rtfd.org/
