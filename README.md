@@ -3,7 +3,7 @@ About agate
 
 Home: http://agate.readthedocs.org/
 
-Package license: COPYING
+Package license: MIT
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/agate-feedstock/blob/master/LICENSE.txt)
 
