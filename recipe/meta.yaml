@@ -1,21 +1,18 @@
 {% set name = "agate" %}
 {% set version = "1.6.1" %}
-{% set compress_type = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash_val = "c93aaa500b439d71e4a5cf088d0006d2ce2c76f1950960c8843114e5f361dfd3" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}
-  {{ hash_type }}: {{ hash_val }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: c93aaa500b439d71e4a5cf088d0006d2ce2c76f1950960c8843114e5f361dfd3
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -40,6 +37,10 @@ test:
     - agate.data_types
     - agate.table
     - agate.tableset
+  commands:
+    - pip check
+  requires: 
+    - pip
 
 about:
   home: http://agate.readthedocs.org/
