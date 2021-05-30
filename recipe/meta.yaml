@@ -1,29 +1,26 @@
 {% set name = "agate" %}
-{% set version = "1.6.0" %}
-{% set compress_type = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash_val = "1547eb66a4caaea08cc247077e5b3740629be6724a047c94be0ecbbfa52ceb0a" %}
+{% set version = "1.6.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}
-  {{ hash_type }}: {{ hash_val }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: c93aaa500b439d71e4a5cf088d0006d2ce2c76f1950960c8843114e5f361dfd3
 
 build:
-  number: 3
+  number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
 
   run:
-    - python
+    - python >=3.6
     - six >=1.9.0
     - pytimeparse >=1.1.5
     - parsedatetime >=2.1
@@ -40,12 +37,16 @@ test:
     - agate.data_types
     - agate.table
     - agate.tableset
+  commands:
+    - pip check
+  requires: 
+    - pip
 
 about:
   home: http://agate.readthedocs.org/
   license: MIT
   license_family: MIT
-  license: COPYING
+  license_file: COPYING
   summary: 'A data analysis library that is optimized for humans instead of machines.'
   doc_url: http://agate.rtfd.org/
   dev_url: http://agate.rtfd.org/
@@ -53,3 +54,4 @@ about:
 extra:
   recipe-maintainers:
     - pmlandwehr
+    - jan-janssen
