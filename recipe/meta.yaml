@@ -1,5 +1,5 @@
 {% set name = "agate" %}
-{% set version = "1.6.2" %}
+{% set version = "1.6.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8dbd4a57a2cffecfa2d8109ef5993ec4be12a8a7c81fbc0c8c79d96d4c4399ed
+  sha256: e0f2f813f7e12311a4cdccc97d6ba0a6781e9c1aa8eca0ab00d5931c0113a308
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
