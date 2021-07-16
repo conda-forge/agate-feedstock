@@ -29,6 +29,7 @@ requirements:
     - python-slugify >=1.2.1
     - leather >=0.3.2
     - pyicu
+    - future
 
 test:
   imports:
