@@ -10,17 +10,16 @@ source:
   sha256: e0f2f813f7e12311a4cdccc97d6ba0a6781e9c1aa8eca0ab00d5931c0113a308
 
 build:
-  number: 0
-  noarch: python
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.6
+    - python
     - pip
 
   run:
-    - python >=3.6
+    - python
     - six >=1.9.0
     - pytimeparse >=1.1.5
     - parsedatetime !=2.5,!=2.6,>=2.1
@@ -28,7 +27,7 @@ requirements:
     - isodate >=0.5.4
     - python-slugify >=1.2.1
     - leather >=0.3.2
-    - pyicu
+    - pyicu  # [unix]
     - future
 
 test:
