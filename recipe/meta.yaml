@@ -29,6 +29,7 @@ requirements:
     - leather >=0.3.2
     - pyicu  # [unix]
     - future
+    - tzdata
 
 test:
   imports:
