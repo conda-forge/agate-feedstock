@@ -10,7 +10,8 @@ source:
   sha256: bc60880c2ee59636a2a80cd8603d63f995be64526abf3cbba12f00767bcd5b3d
 
 build:
-  number: 0
+  number: 1
+  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -29,6 +30,8 @@ requirements:
     - leather >=0.3.2
     - pyicu  # [unix]
     - future
+    - __win      # [win]
+    - __unix     # [unix]
 
 test:
   imports:
@@ -39,7 +42,7 @@ test:
     - agate.table
     - agate.tableset
   commands:
-    - pip check  # [unix]
+    - pip check
   requires:
     - pip
 
