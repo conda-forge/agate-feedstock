@@ -16,11 +16,11 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.8
     - pip
 
   run:
-    - python
+    - python >=3.8
     - six >=1.9.0
     - pytimeparse >=1.1.5
     - parsedatetime !=2.5,!=2.6,>=2.1
