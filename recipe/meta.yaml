@@ -28,10 +28,11 @@ requirements:
     - isodate >=0.5.4
     - python-slugify >=1.2.1
     - leather >=0.3.2
-    - pyicu  # [unix]
     - future
-    - __win      # [win]
-    - __unix     # [unix]
+    - pyicu           # [unix]
+    - python-tzdata   # [win]
+    - __win           # [win]
+    - __unix          # [unix]
 
 test:
   imports:
@@ -42,7 +43,7 @@ test:
     - agate.table
     - agate.tableset
   commands:
-    - pip check  # [unix]
+    - pip check
   requires:
     - pip
 
