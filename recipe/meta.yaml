@@ -10,16 +10,17 @@ source:
   sha256: bc60880c2ee59636a2a80cd8603d63f995be64526abf3cbba12f00767bcd5b3d
 
 build:
-  number: 0
+  number: 1
+  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
+    - python >=3.8
     - pip
 
   run:
-    - python
+    - python >=3.8
     - six >=1.9.0
     - pytimeparse >=1.1.5
     - parsedatetime !=2.5,!=2.6,>=2.1
@@ -27,8 +28,11 @@ requirements:
     - isodate >=0.5.4
     - python-slugify >=1.2.1
     - leather >=0.3.2
-    - pyicu  # [unix]
     - future
+    - pyicu           # [unix]
+    - python-tzdata   # [win]
+    - __win           # [win]
+    - __unix          # [unix]
 
 test:
   imports:
@@ -39,7 +43,7 @@ test:
     - agate.table
     - agate.tableset
   commands:
-    - pip check  # [unix]
+    - pip check
   requires:
     - pip
 
