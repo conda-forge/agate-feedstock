@@ -31,7 +31,6 @@ requirements:
     - pyicu  # [unix]
     - future
     - __win      # [win]
-    - tzdata     # [win]
     - __unix     # [unix]
 
 test:
@@ -43,7 +42,7 @@ test:
     - agate.table
     - agate.tableset
   commands:
-    - pip check
+    - pip check  # [unix]
   requires:
     - pip
 
