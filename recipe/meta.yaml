@@ -1,5 +1,5 @@
 {% set name = "agate" %}
-{% set version = "1.10.0" %}
+{% set version = "1.10.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 20a07723bf05e96c69ff49e7513662d475dad356721383f659a8c8314acfdbec
+  sha256: 064f89ae73b645951a4104028db0d11f9abf0523052bdb7c35ac9ed335a4b087
 
 build:
   number: 0
