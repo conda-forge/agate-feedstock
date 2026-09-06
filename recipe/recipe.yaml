@@ -1,0 +1,68 @@
+schema_version: 1
+
+context:
+  name: agate
+  version: "1.14.2"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: 7f29841c39d84b1de7fde762b8d792085371515324f3a01413b20f810398225b
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - six >=1.9.0
+    - pytimeparse >=1.1.5
+    - parsedatetime !=2.5,!=2.6,>=2.1
+    - babel >=2.0
+    - isodate >=0.5.4
+    - python-slugify >=1.2.1
+    - leather >=0.3.2
+    - future
+    - if: unix
+      then: pyicu
+    - if: win
+      then: python-tzdata
+    - if: win
+      then: __win
+    - if: unix
+      then: __unix
+
+tests:
+  - python:
+      imports:
+        - agate
+        - agate.aggregations
+        - agate.computations
+        - agate.data_types
+        - agate.table
+        - agate.tableset
+      pip_check: true
+      python_version:
+        - ${{ python_min }}
+        - "*"
+
+about:
+  license: MIT
+  license_file: COPYING
+  summary: A data analysis library that is optimized for humans instead of machines.
+  homepage: http://agate.readthedocs.org/
+  repository: http://agate.rtfd.org/
+  documentation: http://agate.rtfd.org/
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
